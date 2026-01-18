@@ -1,1 +1,1 @@
--- np here ur good
+return { "wakatime/vim-wakatime", lazy = false }
