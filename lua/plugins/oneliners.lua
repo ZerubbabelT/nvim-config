@@ -1,1 +1,11 @@
-return { "wakatime/vim-wakatime", lazy = false }
+return {
+    "wakatime/vim-wakatime",
+    lazy = false,
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true,
+        -- use opts = {} for passing setup options
+        -- this is equivalent to setup({}) function
+    },
+}
