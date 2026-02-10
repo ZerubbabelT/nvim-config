@@ -17,6 +17,8 @@ return {
     config = function()
         local autoformat_filetypes = {
             "lua",
+            "go",
+            "python",
         }
         -- Create a keymap for vim.lsp.buf.implementation
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -94,6 +96,8 @@ return {
                 vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
                 vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
                 vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+                vim.keymap.set("v", "<Tab>", ">gv")
+                vim.keymap.set("v", "<S-Tab>", "<gv")
             end,
         })
         require("mason").setup({})
@@ -103,6 +107,7 @@ return {
                 "intelephense",
                 "ts_ls",
                 "eslint",
+                "gopls",
             },
             handlers = {
                 -- this first function is the "default handler"
