@@ -1,24 +1,33 @@
-local function enable_transparency()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-end
 return {
-	{
-	    "folke/tokyonight.nvim",
-	config = function()
-	vim.cmd.colorscheme "tokyonight"
-	enable_transparency()
-    end
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("tokyonight")
+      -- Transparency
+      local groups = { "Normal", "NormalFloat", "SignColumn" }
+      for _, group in ipairs(groups) do
+        vim.api.nvim_set_hl(0, group, { bg = "none" })
+      end
+    end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
     },
-    {
-	"nvim-lualine/lualine.nvim",
-	dependencies = {
-	    "nvim-tree/nvim-web-devicons",
-	},
-	opts = {
-	    theme = "tokyonight"
-	},
-	enable_transparency()
+    opts = {
+      options = {
+        theme = "tokyonight",
+        globalstatus = true,
+      },
+      sections = {
+        lualine_c = {
+          { "filename" },
+          { "aerial" }, -- Show current function/class in statusline
+        },
+      },
     },
+  },
 }

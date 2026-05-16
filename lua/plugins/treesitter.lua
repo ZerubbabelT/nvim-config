@@ -10,6 +10,11 @@ return {
         },
         ensure_installed = {
             "lua",
+            "python",
+            "go",
+            "typescript",
+            "javascript",
+            "php",
         },
         auto_install = false,
     },
