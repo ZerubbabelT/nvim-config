@@ -5,7 +5,7 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    { "<leader>o", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial (Outline)" },
+    { "<leader>o", "<cmd>AerialToggle<CR>", desc = "Toggle Aerial (Outline)" },
     { "<leader>as", "<cmd>Telescope aerial<CR>", desc = "Search Symbols (Aerial)" },
   },
   opts = {
