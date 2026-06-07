@@ -17,7 +17,7 @@ return {
     end,
     show_guides = true,
     manage_folds = true,
-    link_folds_to_tree = true,
+    link_folds_to_tree = false,
     link_tree_to_folds = true,
   },
 }
