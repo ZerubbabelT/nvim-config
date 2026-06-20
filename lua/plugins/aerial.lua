@@ -16,7 +16,7 @@ return {
       vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
     end,
     show_guides = true,
-    manage_folds = true,
+    manage_folds = false,
     link_folds_to_tree = false,
     link_tree_to_folds = true,
   },
